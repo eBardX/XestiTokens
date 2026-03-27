@@ -1,6 +1,7 @@
 // © 2025–2026 John Gary Pusey (see LICENSE.md)
 
-import Foundation
+private import Foundation
+private import XestiTools
 
 extension Tokenizer.Rule {
 

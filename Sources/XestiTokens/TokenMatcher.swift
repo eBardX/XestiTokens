@@ -1,6 +1,6 @@
 // © 2025–2026 John Gary Pusey (see LICENSE.md)
 
-import XestiTools
+private import XestiTools
 
 /// A matcher that processes the provided sequence of tokens.
 public struct TokenMatcher<S: Sequence> where S.Element == Tokenizer.Token {
