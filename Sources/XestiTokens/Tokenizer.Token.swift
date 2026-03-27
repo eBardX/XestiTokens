@@ -49,6 +49,11 @@ extension Tokenizer.Token: CustomStringConvertible {
     }
 }
 
+// MARK: - Equatable
+
+extension Tokenizer.Token: Equatable {
+}
+
 // MARK: - Sendable
 
 extension Tokenizer.Token: Sendable {

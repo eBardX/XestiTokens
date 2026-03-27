@@ -110,6 +110,11 @@ extension Tokenizer.Rule: Hashable {
     }
 }
 
+// MARK: - Identifiable
+
+extension Tokenizer.Rule: Identifiable {
+}
+
 // MARK: - Private Functions
 
 private func _formatConditions(_ conditions: Set<Tokenizer.StartCondition>) -> String {

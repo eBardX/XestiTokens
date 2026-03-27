@@ -28,7 +28,7 @@ extension Tokenizer.Token {
         // MARK: Public Instance Properties
 
         /// The string value representing this token kind.
-
+        ///
         /// A new token kind instance initialized with `stringValue` will be
         /// equivalent to this instance.
         public let stringValue: String

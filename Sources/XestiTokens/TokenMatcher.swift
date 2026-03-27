@@ -10,7 +10,7 @@ public struct TokenMatcher<S: Sequence> where S.Element == Tokenizer.Token {
     /// A type representing the kind of token.
     public typealias Kind = Tokenizer.Token.Kind
 
-    /// A type representing a  token.
+    /// A type representing a token.
     public typealias Token = Tokenizer.Token
 
     // MARK: Public Initializers
@@ -45,7 +45,7 @@ extension TokenMatcher {
     ///
     /// If there are no more tokens available in the sequence, an appropriate
     /// error is thrown. Otherwise, an error complaining that the next token is
-    /// unrecognized is thrown.
+    /// unexpected is thrown.
     public mutating func failOnNext() throws {
         guard let token = baseReader.read()
         else { throw Error.noMoreTokens }
@@ -59,7 +59,7 @@ extension TokenMatcher {
     /// - Parameter kind:   The token kind to match.
     ///
     /// - Returns:  `true` if there is a next, matching token in the sequence;
-    ///             otherwise, `nil`.
+    ///             otherwise, `false`.
     public func nextMatches(_ kind: Kind) -> Bool {
         nextMatches([kind])
     }
@@ -70,7 +70,7 @@ extension TokenMatcher {
     /// - Parameter kinds:  The set of token kinds to match.
     ///
     /// - Returns:  `true` if there is a next, matching token in the sequence;
-    ///             otherwise, `nil`.
+    ///             otherwise, `false`.
     public func nextMatches(_ kinds: [Kind]) -> Bool {
         guard let token = baseReader.peek(),
               kinds.contains(token.kind)

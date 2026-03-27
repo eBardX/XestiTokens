@@ -10,7 +10,7 @@ extension Tokenizer {
         /// The matching string value should be saved as a token.
         ///
         /// As associated values, this case contains the kind of token in which
-        /// to save the string value, as weill as an optional start condition to
+        /// to save the string value, as well as an optional start condition to
         /// which to change. If the start condition is `nil`, the tokenizer’s
         /// current start condition remains unchanged.
         case save(Tokenizer.Token.Kind, Tokenizer.StartCondition?)
