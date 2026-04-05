@@ -28,7 +28,7 @@ struct WordNumberSyntaxTests {
 
 extension WordNumberSyntaxTests {
     @Test
-    func numbers() throws {
+    func test_numbers() throws {
         let tokens = try tokenizer.tokenize(input: "  233 2    1  23123    3333333     324    33    2")
 
         assertEqualTokens(actual: tokens,
@@ -43,7 +43,7 @@ extension WordNumberSyntaxTests {
     }
 
     @Test
-    func words() throws {
+    func test_words() throws {
         let tokens = try tokenizer.tokenize(input: "  HELLO  h i abc  ABC   Hi   hello         boy        XD")
 
         assertEqualTokens(actual: tokens,
@@ -59,7 +59,7 @@ extension WordNumberSyntaxTests {
     }
 
     @Test
-    func wordsAndNumbers() throws {
+    func test_wordsAndNumbers() throws {
         let tokens = try tokenizer.tokenize(input: "  233 2    1  23123abc  ABC   Hi3333333     324    33    2")
 
         assertEqualTokens(actual: tokens,

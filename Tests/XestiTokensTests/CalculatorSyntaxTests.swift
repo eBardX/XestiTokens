@@ -34,7 +34,7 @@ struct CalculatorSyntaxTests {
 
 extension CalculatorSyntaxTests {
     @Test
-    func complexExpression() throws {
+    func test_complexExpression() throws {
         let tokens = try tokenizer.tokenize(input: "( 1332.4322  +       1   ) *2 / 44.44 + ((2.3- 2) * 4  )   / 0.3       ")
 
         assertEqualTokens(actual: tokens,
@@ -62,7 +62,7 @@ extension CalculatorSyntaxTests {
     }
 
     @Test
-    func floatIntSum() throws {
+    func test_floatIntSum() throws {
         let tokens = try tokenizer.tokenize(input: "   1332.4322  +       1   ")
 
         assertEqualTokens(actual: tokens,
@@ -72,7 +72,7 @@ extension CalculatorSyntaxTests {
     }
 
     @Test
-    func floatSum() throws {
+    func test_floatSum() throws {
         let tokens = try tokenizer.tokenize(input: "1.2   +      1.004")
 
         assertEqualTokens(actual: tokens,
@@ -82,7 +82,7 @@ extension CalculatorSyntaxTests {
     }
 
     @Test
-    func intSum() throws {
+    func test_intSum() throws {
         let tokens = try tokenizer.tokenize(input: "1 + 1")
 
         assertEqualTokens(actual: tokens,
