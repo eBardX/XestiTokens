@@ -44,6 +44,9 @@ public struct Tokenizer {
     /// - Parameter input:  The input string to tokenize.
     ///
     /// - Returns:  The array of recognized tokens.
+    ///
+    /// - Throws:   `Error.unrecognizedToken` if an unrecognized token is
+    ///             encountered in the input string.
     public func tokenize(input: String) throws -> [Token] {
         var scanner = Scanner(rules: rules,
                               input: input,

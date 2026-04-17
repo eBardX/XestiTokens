@@ -43,9 +43,8 @@ extension TokenMatcher {
 
     /// Unconditionally throws an error.
     ///
-    /// If there are no more tokens available in the sequence, an appropriate
-    /// error is thrown. Otherwise, an error complaining that the next token is
-    /// unexpected is thrown.
+    /// - Throws:   `Error.noMoreTokens` if there are no more tokens available;
+    ///             otherwise, `Error.unexpectedToken` for the next token.
     public mutating func failOnNext() throws {
         guard let token = baseReader.read()
         else { throw Error.noMoreTokens }
@@ -112,6 +111,10 @@ extension TokenMatcher {
     /// - Parameter kind:   The token kind to match.
     ///
     /// - Returns:  The next, matching token from the sequence.
+    ///
+    /// - Throws:   `Error.noMoreTokens` if there are no more tokens available;
+    ///             otherwise, `Error.unexpectedToken` if the next token does
+    ///             not match `kind`.
     @discardableResult
     public mutating func readMustMatch(_ kind: Kind) throws -> Token {
         try readMustMatch([kind])
@@ -122,6 +125,10 @@ extension TokenMatcher {
     /// - Parameter kinds:  The set of token kinds to match.
     ///
     /// - Returns:  The next, matching token from the sequence.
+    ///
+    /// - Throws:   `Error.noMoreTokens` if there are no more tokens available;
+    ///             otherwise, `Error.unexpectedToken` if the next token does
+    ///             not match any kind in `kinds`.
     @discardableResult
     public mutating func readMustMatch(_ kinds: [Kind]) throws -> Token {
         guard let token = baseReader.read()
