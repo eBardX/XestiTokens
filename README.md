@@ -25,4 +25,4 @@ XestiTokens is available under [the MIT license][license].
 
 [docc]:     https://www.swift.org/documentation/docc/
 [license]:  https://github.com/eBardX/XestiTokens/blob/main/LICENSE.md
-[refdoc]:   https://eBardX.github.io/XestiTokens/documentation/xestitokens
+[refdoc]:   https://eBardX.github.io/xesti-packages-docs/documentation/xestitokens
