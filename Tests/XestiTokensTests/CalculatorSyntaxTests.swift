@@ -16,7 +16,7 @@ extension Kind {
     fileprivate static let rightParenthesis = Self("rightParenthesis")
 }
 
-nonisolated(unsafe) private let rules: [Rule] = [Rule(/[0-9]+\.[0-9]+/, .float),
+private nonisolated(unsafe) let rules: [Rule] = [Rule(/[0-9]+\.[0-9]+/, .float),
                                                  Rule(/[0-9]+/, .integer),
                                                  Rule(/\(/, .leftParenthesis),
                                                  Rule(/[\-\*\/\+]/, .op),
@@ -24,7 +24,7 @@ nonisolated(unsafe) private let rules: [Rule] = [Rule(/[0-9]+\.[0-9]+/, .float),
                                                  Rule(regex: /\s+/,
                                                       disposition: .skip(nil))]
 
-nonisolated(unsafe) private let tokenizer = Tokenizer(rules: rules,
+private nonisolated(unsafe) let tokenizer = Tokenizer(rules: rules,
                                                       tracing: .silent)
 
 struct CalculatorSyntaxTests {

@@ -13,12 +13,12 @@ extension Kind {
     fileprivate static let text   = Self("text")
 }
 
-nonisolated(unsafe) private let rules: [Rule] = [Rule(/[0-9]+/, .number),
+private nonisolated(unsafe) let rules: [Rule] = [Rule(/[0-9]+/, .number),
                                                  Rule(/[A-Za-z]+/, .text),
                                                  Rule(regex: /\s+/,
                                                       disposition: .skip(nil))]
 
-nonisolated(unsafe) private let tokenizer = Tokenizer(rules: rules,
+private nonisolated(unsafe) let tokenizer = Tokenizer(rules: rules,
                                                       tracing: .silent)
 
 struct WordNumberSyntaxTests {
